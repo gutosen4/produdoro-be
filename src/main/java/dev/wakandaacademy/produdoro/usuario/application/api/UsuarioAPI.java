@@ -1,4 +1,4 @@
-package dev.wakandaacademy.produdoro.usuario.domain;
+package dev.wakandaacademy.produdoro.usuario.application.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
