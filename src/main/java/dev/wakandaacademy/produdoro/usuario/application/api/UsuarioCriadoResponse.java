@@ -8,7 +8,6 @@ import lombok.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 
-import javax.validation.constraints.Email;
 import java.util.UUID;
 
 @Value
