@@ -23,9 +23,9 @@ import lombok.NoArgsConstructor;
 @Document(collection = "Usuario")
 public class Usuario {
 	@Id
-	private UUID IdUsuario;
+	private UUID idUsuario;
 	@Email
-	@Indexed
+	@Indexed(unique = true)
 	private String email;
 	private ConfiguracaoUsuario configuracao;
 	@Builder.Default
@@ -34,6 +34,7 @@ public class Usuario {
 	private Integer quantidadePomodorosPausaCurta = 0;
 
 	public Usuario(UsuarioNovoRequest usuarioNovo, ConfiguracaoPadrao configuracaoPadrao) {
+		this.idUsuario = UUID.randomUUID();
 		this.email = usuarioNovo.getEmail();
 		this.status = StatusUsuario.FOCO;
 		this.configuracao = new ConfiguracaoUsuario(configuracaoPadrao);
